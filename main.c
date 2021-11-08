@@ -108,7 +108,7 @@ void read_data() {
     // Print Data
     int i;
     for (i = 0; i < cnt; i++) {
-        printf("%3d:\t y: %d\t boro: %-16s\t population: %d\n", i, pop_data[i].year, pop_data[i].boro, pop_data[i].population);
+        printf("%3d:\t year: %d\t boro: %-16s\t pop: %d\n", i, pop_data[i].year, pop_data[i].boro, pop_data[i].population);
     }
 
     // Ending Function
@@ -147,7 +147,7 @@ void add_data() {
     }
 
     // Ending Function
-    printf("-add_data completed, appended \"y: %d\t boro: %-16s\t population: %d\" to file %s\n\n", temp.year, temp.boro, temp.population, DATA);
+    printf("-add_data completed, appended \"year: %d\t boro: %-16s\t pop: %d\" to file %s\n\n", temp.year, temp.boro, temp.population, DATA);
     close(fd);
     return;
 }
@@ -172,7 +172,7 @@ void update_data() {
     // Print Data
     int i;
     for (i = 0; i < cnt; i++) {
-        printf("%3d:\t y: %d\t boro: %-16s\t population: %d\n", i, pop_data[i].year, pop_data[i].boro, pop_data[i].population);
+        printf("%3d:\t year: %d\t boro: %-16s\t pop: %d\n", i, pop_data[i].year, pop_data[i].boro, pop_data[i].population);
     }
 
     // Asking For Specific Entry
@@ -190,7 +190,7 @@ void update_data() {
     }
 
     // Printing Out Entry And Asking For Information
-    printf("%3d:\t y: %d\t boro: %-16s\t population: %d\n", ind, pop_data[ind].year, pop_data[ind].boro, pop_data[ind].population);
+    printf("%3d:\t year: %d\t boro: %-16s\t pop: %d\n", ind, pop_data[ind].year, pop_data[ind].boro, pop_data[ind].population);
     struct pop_entry temp;
     printf("Enter updated entry in format [int year] [string borough] [int population]:\n");
     char input2[LEN], boro[LEN];
@@ -217,7 +217,7 @@ void update_data() {
     }
 
     // Ending Function
-    printf("-update_data completed, updated entry %d to \"y: %d\t boro: %-16s\t population: %d\" in file %s\n\n", ind, temp.year, temp.boro, temp.population, DATA);
+    printf("-update_data completed, updated entry %d to \"year: %d\t boro: %-16s\t pop: %d\" in file %s\n\n", ind, temp.year, temp.boro, temp.population, DATA);
     close(fd2);
     return;
 }
