@@ -83,7 +83,7 @@ void read_csv() {
     }
 
     // Ending Function
-    printf("-read_csv completed, wrote %d bytes of data to %s\n\n", sizeof(pop_data), DATA);
+    printf("-read_csv completed, wrote %ld bytes of data to %s\n\n", sizeof(pop_data), DATA);
     close(fd2);
     return;
 }
@@ -125,7 +125,7 @@ void add_data() {
     printf("Enter new entry in format [int year] [string borough] [int population]:\n");
     char input[1024], boro[1024];
     fgets(input, 1024, stdin);
-    if (sscanf(input, "%d %s %d\n", &(temp.year), &boro, &(temp.population)) != 3) {
+    if (sscanf(input, "%d %s %d\n", &(temp.year), boro, &(temp.population)) != 3) {
         printf("Incorrect formatting of inputted elements\n");
         return;
     }
@@ -194,7 +194,7 @@ void update_data() {
     printf("Enter updated entry in format [int year] [string borough] [int population]:\n");
     char input2[1024], boro[1024];
     fgets(input2, 1024, stdin);
-    if (sscanf(input2, "%d %s %d\n", &(temp.year), &boro, &(temp.population)) != 3) {
+    if (sscanf(input2, "%d %s %d\n", &(temp.year), boro, &(temp.population)) != 3) {
         printf("Incorrect formatting of inputted elements\n");
         return;
     }
