@@ -195,7 +195,7 @@ void update_data() {
     printf("Enter updated entry in format [int year] [string borough] [int population]:\n");
     char input2[LEN], boro[LEN];
     fgets(input2, LEN, stdin);
-    if (sscanf(input2, "%d %s %d\n", &(temp.year), boro, &(temp.population)) != 3) {
+    if (sscanf(input2, "%d %1024[^0-9] %d\n", &(temp.year), boro, &(temp.population)) != 3) {
         printf("Incorrect formatting of inputted elements\n");
         return;
     }
