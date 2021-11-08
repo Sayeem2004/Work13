@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #define CSV "nyc_pop.csv"
 #define DATA "nyc_pop.data"
+#define LEN 1024
 
 struct pop_entry {
   int year;
@@ -123,8 +124,8 @@ void add_data() {
     // Getting New Pop_Entry
     struct pop_entry temp;
     printf("Enter new entry in format [int year] [string borough] [int population]:\n");
-    char input[1024], boro[1024];
-    fgets(input, 1024, stdin);
+    char input[LEN], boro[LEN];
+    fgets(input, LEN, stdin);
     if (sscanf(input, "%d %s %d\n", &(temp.year), boro, &(temp.population)) != 3) {
         printf("Incorrect formatting of inputted elements\n");
         return;
@@ -177,8 +178,8 @@ void update_data() {
     // Asking For Specific Entry
     int ind;
     printf("Enter the number of the entry you want to update:\n");
-    char input[1024];
-    fgets(input, 1024, stdin);
+    char input[LEN];
+    fgets(input, LEN, stdin);
     if (sscanf(input, "%d", &ind) != 1) {
         printf("Please input an integer next time\n");
         return;
@@ -192,8 +193,8 @@ void update_data() {
     printf("%3d:\t y: %d\t boro: %-16s\t population: %d\n", ind, pop_data[ind].year, pop_data[ind].boro, pop_data[ind].population);
     struct pop_entry temp;
     printf("Enter updated entry in format [int year] [string borough] [int population]:\n");
-    char input2[1024], boro[1024];
-    fgets(input2, 1024, stdin);
+    char input2[LEN], boro[LEN];
+    fgets(input2, LEN, stdin);
     if (sscanf(input2, "%d %s %d\n", &(temp.year), boro, &(temp.population)) != 3) {
         printf("Incorrect formatting of inputted elements\n");
         return;
