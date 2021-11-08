@@ -126,7 +126,7 @@ void add_data() {
     printf("Enter new entry in format [int year] [string borough] [int population]:\n");
     char input[LEN], boro[LEN];
     fgets(input, LEN, stdin);
-    if (sscanf(input, "%d %s %d\n", &(temp.year), boro, &(temp.population)) != 3) {
+    if (sscanf(input, "%d %1024[^0-9] %d\n", &(temp.year), boro, &(temp.population)) != 3) {
         printf("Incorrect formatting of inputted elements\n");
         return;
     }
@@ -237,6 +237,7 @@ int main(int argc, char* argv[]) {
         if (strcmp(argv[i], "-add_data") == 0) {add_data(); continue;}
         if (strcmp(argv[i], "-update_data") == 0) {update_data(); continue;}
         printf("Command line argument %d, %s, is undefined\n", i-1, argv[i]);
+
     }
 
     return 0;
