@@ -237,7 +237,6 @@ int main(int argc, char* argv[]) {
         if (strcmp(argv[i], "-add_data") == 0) {add_data(); continue;}
         if (strcmp(argv[i], "-update_data") == 0) {update_data(); continue;}
         printf("Command line argument %d, %s, is undefined\n", i-1, argv[i]);
-
     }
 
     return 0;
